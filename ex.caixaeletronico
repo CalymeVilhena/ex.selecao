@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int valor, notas100, notas50, notas20, notas10;
+    
+    // Solicita ao usuário que insira o valor do saque
+    printf("Digite o valor que deseja sacar (múltiplo de 10): ");
+    scanf("%d", &valor);
+    
+    // Verifica se o valor é múltiplo de 10
+    if (valor % 10 != 0) {
+        printf("O valor deve ser múltiplo de 10.\n");
+        return 1; // Termina o programa com erro
+    }
+
+    // Calcula a quantidade de notas de cada valor
+    notas100 = valor / 100;
+    valor %= 100;
+    notas50 = valor / 50;
+    valor %= 50;
+    notas20 = valor / 20;
+    valor %= 20;
+    notas10 = valor / 10;
+    
+    // Exibe a quantidade de notas de cada valor
+    printf("Notas de R$100: %d\n", notas100);
+    printf("Notas de R$50: %d\n", notas50);
+    printf("Notas de R$20: %d\n", notas20);
+    printf("Notas de R$10: %d\n", notas10);
+
+    return 0; // Termina o programa com sucesso
+}
